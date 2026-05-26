@@ -1,0 +1,38 @@
+add_newline = false
+
+format = """
+[](#8aadf4)$username$hostname[](fg:#8aadf4 bg:#b7bdf8)$directory[](fg:#b7bdf8 bg:#363a4f)$git_branch$git_status[](fg:#363a4f) $character
+"""
+
+# 🔵 Username
+[username]
+show_always = true
+format = "[ $user ]($style)"
+style_user = "bg:#8aadf4 fg:#181926"
+
+# 💻 Hostname (FIXED spacing)
+[hostname]
+ssh_only = false
+format = "[@$hostname ]($style)"
+style = "bg:#8aadf4 fg:#181926"
+
+# 📁 Directory
+[directory]
+format = "[ $path ]($style)"
+style = "bg:#b7bdf8 fg:#181926"
+truncation_length = 3
+
+# 🌊 Git
+[git_branch]
+symbol = " "
+format = "[ $symbol$branch ]($style)"
+style = "bg:#363a4f fg:#7dc4e4"
+
+[git_status]
+format = "[($all_status$ahead_behind )]($style)"
+style = "bg:#363a4f fg:#7dc4e4"
+
+# ➜ Prompt
+[character]
+success_symbol = "[❯](bold #8aadf4)"
+error_symbol = "[❯](bold #ff5555)"
